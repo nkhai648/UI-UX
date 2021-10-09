@@ -1,0 +1,1 @@
+- target="_blank" : khi thêm thuộc tính này vào thẻ link thì liên kết sẽ được mở trong một cửa sổ hoặc tab mới

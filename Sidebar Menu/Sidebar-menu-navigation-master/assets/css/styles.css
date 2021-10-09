@@ -1,0 +1,156 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap");
+/*===== VARIABLES CSS Y SASS =====*/
+/*Varibles sass*/
+/*Variables css*/
+/*===== Colores =====*/
+:root {
+  --first-color: #12192C;
+  --second-color: #F5A623;
+  --white-color: #EDEDED;
+}
+
+/*===== Fuente y tipografia =====*/
+:root {
+  --body-font: 'Quicksand', sans-serif;
+  --small-font-size: 0.875rem;
+}
+
+@media screen and (min-width: 768px) {
+  :root {
+    --small-font-size: 0.938rem;
+  }
+}
+
+/*===== z index =====*/
+:root {
+  --z-back: -10;
+  --z-normal: 1;
+  --z-tooltip: 10;
+  --z-fixed: 100;
+  --z-modal: 1000;
+}
+
+/*===== BASE =====*/
+*, ::before, ::after {
+  box-sizing: border-box;
+}
+
+body {
+  position: relative;
+  margin: 0;
+  padding: 1rem 0 0 5rem;
+  font-family: var(--body-font);
+  background-color: var(--white-color);
+  transition: .5s;
+}
+
+h1 {
+  margin: 0;
+}
+
+ul, li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+/*=====  NAV =====*/
+.l-navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 56px;
+  height: 100vh;
+  background-color: var(--first-color);
+  z-index: var(--z-fixed);
+  padding: 1.25rem .5rem 2rem;
+  transition: .5s;
+}
+
+.nav {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+}
+
+.nav__logo {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2rem;
+  padding: 0 .5rem;
+}
+
+.nav__logo-text {
+  font-size: 1.25rem;
+  color: var(--white-color);
+  font-weight: 700;
+}
+
+.nav__logo-icon {
+  margin-right: 1rem;
+}
+
+.nav__toggle {
+  position: absolute;
+  top: 3.5rem;
+  right: -.6rem;
+  height: 18px;
+  width: 18px;
+  background-color: var(--second-color);
+  color: var(--first-color);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: .5s;
+  cursor: pointer;
+}
+
+.nav__link {
+  display: flex;
+  align-items: center;
+  padding: .5rem;
+  margin-bottom: 1rem;
+  border-radius: .5rem;
+  transition: .3s;
+  font-weight: 700;
+  color: var(--white-color);
+}
+
+.nav__link:hover {
+  background-color: var(--second-color);
+  color: var(--first-color);
+}
+
+.nav__icon {
+  font-size: 1.25rem;
+  margin-right: 1rem;
+  margin-left: 0.1rem;
+}
+
+/*Show menu*/
+.show {
+  width: 168px;
+}
+
+/*Rotate toggle*/
+.rotate {
+  transform: rotate(180deg);
+}
+
+/*Active links menu*/
+.active {
+  background-color: var(--second-color);
+  color: var(--first-color);
+}
+
+/*Add padding body*/
+.expander {
+  padding: 1rem 0 0 12rem;
+}

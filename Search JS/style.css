@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+* {
+    margin:0;
+    padding:0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+body {
+    background-color: #297eff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height:100vh;
+}
+.search {
+    position: relative;
+    width: 60px;
+    height: 60px;
+    background-color: #fff;
+    border-radius:60px;
+    box-shadow: 0 0 0 5px #2573ef;
+    overflow: hidden;
+    transition:.5s;
+}
+.icon {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    background-color: #fff;
+    cursor: pointer;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.icon::before {
+    position: absolute;
+    content:'';
+    width: 16px;
+    height: 16px;
+    border:3px solid #297eff;
+    border-radius: 16px;
+    transform:translate(-4px, -4px);
+
+}
+.icon::after {
+    position: absolute;
+    content:'';
+    width: 2.8px;
+    height: 15px;
+    background:#297eff;
+    border-radius: 16px;
+    transform:translate(8px, 8px) rotate(315deg)
+}
+.input {
+    position: relative;
+    left:60px;
+    top:0;
+    height:60px;
+    width: 360px;
+}
+input {
+    outline:none;
+    height:60px;
+    width: 340px;
+    border:none;
+    font-size:18px;
+    padding: 16px 0;
+}
+.close {
+    position: absolute;
+    top:50%;
+    transform:translateY(-50%);
+    right:-5px;
+    width: 15px;
+    height: 15px;
+    cursor:pointer;
+}
+.close::before {
+    position: absolute;
+    width: 1px;
+    height: 16px;
+    content:'';
+    background-color: rgb(73, 73, 73);
+    transform: translate(7px, 1px) rotate(45deg)
+}
+.close::after {
+    position: absolute;
+    width: 1px;
+    height: 16px;
+    content:'';
+    background-color: rgb(73, 73, 73);
+    transform: translate(7px, 1px) rotate(315deg)
+}
+/*  TODO SHOW INPUT  */
+.active {
+    width: 450px;
+}

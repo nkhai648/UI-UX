@@ -1,0 +1,144 @@
+/* Import font from goggle  */
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500;700&display=swap');
+
+/* VARIABLE CSS  */
+:root {
+    /* Colors  */
+    --first-color: #322FF2;
+    --first-color-light: #E3E2FD;
+    --body-color: #FAFAFF;
+    --color-insta:linear-gradient(to left, #f3b562,#d6516a,#9d2caf);
+    
+    /* Font and typography */
+    --body-font:'Quicksand', sans-serif ;
+    --normal-font-size: 1rem;
+
+}
+/* BASE  */
+*,::after,::before {
+    box-sizing: border-box;
+}
+body {
+    margin:0;
+    font-family:var(--body-font);
+    background-color: var(--body-color);
+}
+.social,
+.social__content, 
+.social__container {
+    display: flex;
+}
+.social {
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+.social__content {
+    position: relative;
+    padding: .5rem;
+    margin: 0 1rem;
+    background-color: var(--first-color-light);
+    border-radius:1rem;
+    box-shadow: -2px -2px 8px #FAFAFF,
+                -2px -2px 8px rgba(12,12,64,.2);
+    cursor:pointer
+}
+.social__icon {
+    color: var(--first-color);
+    font-size: 2rem;
+}
+.social__tooltips {
+    opacity: 0;
+    position: absolute;
+    padding: .5rem 1rem;
+    background-color: var(--first-color);
+    color: var(--first-color-light);
+    white-space:nowrap;
+    font-weight: 700;
+    border-radius: .5rem;
+    pointer-events: none;
+}
+.social__tooltips::after {
+    content: '';
+    position: absolute;
+    width:12px;
+    height: 12px;
+    background-color: var(--first-color);
+    border-radius: 3px;
+}
+.social__content, .social__tooltips, .social__icon {
+    transition: .3s ;
+}
+.social__content:hover {
+    background-color: var(--first-color);
+}
+.social__content:hover .social__icon {
+    color: var(--first-color-light);
+}
+
+
+/* SOCIAL TOOLTIP LEFT */
+.social__tooltip-left {
+    left: 0;
+    transform: translateX(-100%);
+}
+.social__tooltip-left::after {
+    top:50%;
+    right: 1px;
+    transform:translate(50%, -50%) rotate(45deg);
+}
+.social__content:hover .social__tooltip-left {
+    opacity: 1;
+    left:-1rem;
+}
+/* SOCIAL TOOLTIP TOP */
+.social__tooltip-top{
+    top:0;
+    transform:translate(-30%,-100%);
+}
+.social__tooltip-top::after {
+    bottom:1px;
+    left:50%;
+    transform:translate(-50%,50%) rotate(45deg)
+}
+.social__content:hover .social__tooltip-top {
+    top:-1rem;
+    opacity: 1;
+}
+/* SOCIAL TOOLTIP BOTTOM */
+
+.social__tooltip-bot {
+    bottom:0;
+    transform:translate(-30%,100%);
+}
+.social__tooltip-bot::after{
+    top:1px;
+    left:50%;
+    transform:translate(-50%,-50%) rotate(45deg);
+}
+.social__content:hover .social__tooltip-bot {
+    bottom:-1rem;
+    opacity: 1;
+}
+/* SOCIAL TOOLTIP RIGHT */
+.social__tooltip-right {
+    right:0;
+    transform:translateX(100%);
+}
+.social__tooltip-right::after{
+    left:1px;
+    top:50%;
+    transform:translate(-50%,-50%) rotate(45deg);
+}
+.social__content:hover .social__tooltip-right {
+    right:-1rem;
+    opacity: 1;
+}
+
+.bxl-instagram-alt {
+    color: rgb(253, 99, 10);
+}
+.bxl-github {
+    color: black;
+}
+ 
