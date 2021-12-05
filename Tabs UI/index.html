@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="style.css">
+    <title>Tabs</title>
+</head>
+<body>
+    <div class="container">
+        <div class="tabs">
+            <div class="tab-item active">
+                <i class='bx bxl-react'></i>
+                <h2>React</h2>
+            </div>
+            <div class="tab-item">
+                <i class='bx bxl-angular' ></i>
+                <h2>Angular</h2>
+            </div>
+            <div class="tab-item">
+                <i class='bx bxs-plus-circle'></i>
+                <h2>Ember</h2>
+            </div>
+            <div class="tab-item">
+                <i class='bx bxl-vuejs'></i>
+                <h2>Vue.JS</h2>
+            </div>
+            <div class="tab-item">
+                <i class='bx bxs-file-css' ></i>
+                <h2>CSS</h2>
+            </div>
+
+            <div class="line"></div>
+        </div>
+
+        <div class="panes">
+            <div class="pane-item active">
+                <h3>React</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus soluta alias, nam ex atque officiis! Voluptatibus vel facilis ipsa ad.</p>
+            </div>
+            <div class="pane-item">
+                <h3>Angular</h3>
+                <p>Lorem adipisicing elit. Accusamus soluta alias, nam ex atque officiis! Voluptatibus vel facilis .</p>
+            </div>
+            <div class="pane-item">
+                <h3>Ember</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus soluta alias, nam ex atque officiis! Voluptatibus vel facilis ipsa ad.officiis! Voluptatibus vel facilis ipsa ad.</p>
+            </div>
+            <div class="pane-item">
+                <h3>Vue JS</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus soluta alias, nam ex atque officiis! </p>
+            </div>
+            <div class="pane-item">
+                <h3>CSS</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus soluta alias, nam ex atque officiis!consectetur adipisicing elit. Accusamus soluta alias, nam ex atque officiis!consectetur adipisicing elit. Accusamus soluta alias, nam ex atque officiis! </p>
+            </div>
+        </div>
+    </div>
+    <script>
+        const $ = document.querySelector.bind(document),
+            $$ = document.querySelectorAll.bind(document)
+
+        const tabs =  $$('.tab-item'),
+            panes = $$('.pane-item'),
+            line = $('.line'),
+            tabActive = $('.tab-item.active')
+
+        function removeActive() {
+            tabs.forEach((c) => {
+                c.classList.remove('active')
+            })
+            panes.forEach((c) => {
+                c.classList.remove('active')
+            })
+        }
+
+        function lineStyle(el) {
+            line.style.left = el.offsetLeft + 'px'
+            line.style.width = el.offsetWidth + 'px'
+        }
+
+        lineStyle(tabActive)
+        tabs.forEach((tab,index) => {
+            tab.onclick = () => {
+                removeActive();
+                tab.classList.add('active')
+                panes[index].classList.add('active')
+                lineStyle(tab)
+            }
+        })
+    </script>
+</body>
+</html>

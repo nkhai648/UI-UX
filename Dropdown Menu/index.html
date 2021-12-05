@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="style.css">
+    <title>Dropdown Menu</title>
+</head>
+<body>
+    <div class="dropdown">
+        <div class="input-main">
+            <input type="text" placeholder="Dropdown Menu" class="textBox" readonly>
+
+            <i class='bx bx-chevron-down'></i>
+        </div>
+        <div class="option">
+            <div class="option-value"><i class='bx bxl-html5'></i>HTML</div>
+            <div class="option-value"><i class='bx bxl-css3' ></i>CSS</div>
+            <div class="option-value"><i class='bx bxl-javascript' ></i>Javascript</div>
+            <div class="option-value"><i class='bx bxl-figma' ></i>Figma</div>
+            <div class="option-value"><i class='bx bxl-vuejs' ></i>Vue</div>
+        </div>
+    </div>
+
+
+    <script>
+        const div = document.querySelectorAll('.option-value')
+        const input = document.querySelector('.textBox')
+        const main = document.querySelector('.input-main')
+
+        function removeActive() {
+            div.forEach(c => c.classList.remove('active'))
+        }
+        for(let i = 0; i < div.length; i++) {
+            div[i].addEventListener('click', function(){
+                removeActive()
+                div[i].classList.add('active')
+                input.value = div[i].innerText
+            })
+        }
+
+        main.onclick = function () {
+            this.classList.toggle('active')
+        }
+    </script>
+</body>
+</html>

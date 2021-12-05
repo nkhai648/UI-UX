@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap');  
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}  
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    background-color: #eeeeee;
+}
+input::placeholder {
+    font-size: 1.1rem;
+}
+.dropdown {
+    position: relative;
+    width: 300px;
+    height: 50px;
+    margin-top: 100px;
+}
+.input-main {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    padding: 0 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+}
+.input-main i {
+    font-size: 1.6rem;
+    transition: .2s;
+}
+.dropdown .textBox {
+    cursor: pointer;
+    background-color: transparent;
+    outline:none;
+    border: none;
+    width: 100%;
+    font-size: 1.2rem;
+    user-select: none;
+}
+.dropdown .input-main.active i {
+    transform: rotate(-180deg);
+}
+.dropdown .option {
+    position: absolute;
+    left: 0;
+    top: 70px;
+    width: 100%;
+    height: 0px;
+    background-color: #fff;
+    box-shadow: 0 30px 30px rgba(0,0,0,0.05);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: .2s;
+}
+.dropdown .input-main.active ~ .option {
+    height: 264px;
+}
+.dropdown .option div {
+    padding: 12px 20px;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transition: .2s;
+}
+
+.dropdown .option div.active {
+    background-color: #62baea;
+    color: white;
+}
+.dropdown .option div:hover {
+    background-color: #62baea;
+    color: white;
+}
+.option i {
+    margin-right: 5px;
+    font-size: 1.4rem;
+}

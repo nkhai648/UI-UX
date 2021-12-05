@@ -1,0 +1,72 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}  
+ul {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: black;
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+button, input, textarea {
+  outline: none;
+  border: none;
+}
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: rgb(219, 219, 219);
+}
+
+.toggle {
+    height: 120px;
+    width: 120px;
+    border-radius: 10px;
+    background-color: #fff;
+    overflow: hidden;
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.toggle span {
+    position: absolute;
+    width: 80px;
+    height: 7px;
+    border-radius: 4px;
+    background-color: rgb(57, 104, 233);
+    transition: .5s;
+}
+.toggle span:nth-child(1) {
+    transform: translateY(-30px);
+    width: 60px;
+    left: 20px;
+}
+.toggle.active span:nth-child(1) {
+    transform: rotate(45deg);
+    width: 80px;
+    transition-delay: .2s;
+}
+.toggle span:nth-child(3) {
+    transform: translateY(30px);
+    width: 40px;
+    left: 20px;
+}
+.toggle.active span:nth-child(3) {
+    transform: rotate(315deg);
+    width: 80px;
+    transition-delay: .2s;
+}
+.toggle.active span:nth-child(2) {
+    transform: translateX(120px);
+}

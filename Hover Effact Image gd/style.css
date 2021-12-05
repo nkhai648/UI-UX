@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'Source Sans Pro', sans-serif;
+    box-sizing: border-box;
+}
+.wrapper {
+    padding: 20px 100px;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.images{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-gap: 20px 20px;
+    border-radius: 10px;
+}
+img {
+    width: 100%;
+    border-radius: 10px;
+}
+.image {
+    position: relative;
+    width: 300px;
+}
+.bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(255,255,255,0.3);
+    width: 100%;
+    height: 100%;
+}
+.content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 20px;
+    color: white;
+    border-radius: 10px;
+    opacity: 0;
+    transition: .3s linear;
+}
+.data {
+    border: 2px solid #fff;
+    padding: 20px;
+    transform: scale(0);
+    transition:all .3s linear;
+}
+.image:hover .content{
+    background: linear-gradient(43deg, rgba(65, 88, 208,0.6) 0%, rgba(200, 80, 192,0.6) 46%, rgba(255, 204, 112,0.6) 100%);
+    opacity: 1;
+}
+.image:hover .bg  {
+    display: none;
+}
+.image:hover .data {
+    transform:scale(1);
+    
+}
+.hide {
+    display: none;
+}
+.active {
+    display: block;
+}
